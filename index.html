@@ -17,15 +17,33 @@
         }
     </script>
 </head>
-<body>
-<section id="hero">
-    <h1>Yuchen Su</h1>
-    <p id="poem">人生五十年、下天のうちを比ぶれば、梦まぼろしのごとくなり</p>
-    <a href="./about.html" class="button">About Me</a>
-    <a href="http://www.psaux0.com" class="button">Blog</a>
-</section>
-<footer id="footer">
-    © yuchensu.com. All rights reserved.
-</footer>
+<body onload="loaded()">
+<div class="loading" id="iload">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <p>THINKING</p>
+</div>
+<div class="maincontent" id="imain">
+    <section id="hero">
+        <h1>Yuchen Su</h1>
+        <p id="poem">人生五十年、下天のうちを比ぶれば、梦まぼろしのごとくなり</p>
+        <p><img src="res/img/jinsei.jpg"/></p>
+        <a href="./about.html" class="button">About Me</a>
+        <a href="http://www.psaux0.com" class="button">Blog</a>
+    </section>
+    <footer id="footer">
+        © yuchensu.com. All rights reserved.
+    </footer>
+ </div>
+<script>
+    function loaded() {
+        document.getElementById('iload').style.display = "none";
+        document.getElementById('imain').style.display = "block";
+    }
+</script>
 </body>
 </html>

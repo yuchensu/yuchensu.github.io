@@ -2,6 +2,7 @@ body {
     font-size: 15pt;
     letter-spacing: 0.035em;
     line-height: 1.75em;
+    overflow: hidden;
 }
 h1 {
     font-size: 2.5em;

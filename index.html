@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Yuchen Su</title>
+    <script src="lib/js/prefixfree.min.js"></script>
     <script src="lib/js/skel.min.js">
         {
             prefix: "lib/css/style",
@@ -16,9 +17,49 @@
             }
         }
     </script>
+    <style>
+        #loading {
+            width:200px;
+            height:100px;
+            margin: 20% auto;
+            text-align: center;
+        }
+
+        #loading span {
+            height:80px;
+            width:15px;
+            background:#BDBDBD;
+            display:inline-block;
+            animation:loader 1s infinite;
+        }
+        #loading p {
+            color: #BDBDBD;
+            font-size: 20px;
+            font-family: Helvetica;
+            text-transform: uppercase;
+            margin-top: 5px;
+            font-weight: 300;
+            letter-spacing: .05em;
+            text-align: center;
+        }
+        @keyframes loader{
+            50% { height:30px; margin-top:50px; opacity:.5; }
+        }
+
+        #loading span:nth-child(1) {animation-delay:.1s;}
+        #loading span:nth-child(2) {animation-delay:.2s;}
+        #loading span:nth-child(3) {animation-delay:.3s;}
+        #loading span:nth-child(4) {animation-delay:.4s;}
+        #loading span:nth-child(5) {animation-delay:.5s;}
+        #loading span:nth-child(6) {animation-delay:.6s;}
+
+        #maincontent {
+            display: none;
+        }
+    </style>
 </head>
 <body onload="loaded()">
-<div class="loading" id="iload">
+<div id="loading">
     <span></span>
     <span></span>
     <span></span>
@@ -27,7 +68,7 @@
     <span></span>
     <p>THINKING</p>
 </div>
-<div class="maincontent" id="imain">
+<div id="maincontent">
     <section id="hero">
         <h1>Yuchen Su</h1>
         <p id="poem">人生五十年、下天のうちを比ぶれば、梦まぼろしのごとくなり</p>
@@ -41,8 +82,8 @@
  </div>
 <script>
     function loaded() {
-        document.getElementById('iload').style.display = "none";
-        document.getElementById('imain').style.display = "block";
+        document.getElementById('loading').style.display = "none";
+        document.getElementById('maincontent').style.display = "block";
     }
 </script>
 </body>

@@ -70,26 +70,6 @@
     <span></span>
     <p>THINKING</p>
 </div>
-<script>
-    var loadbutton = document.getElementById('load-more');
-    var feed = new Instafeed({
-        get: 'tagged',
-        tagName: 'psaux0',
-        clientId:'1ed94341d26548b9b51bd42bfb0dc0e4',
-        resolution: 'low_resolution',
-        sortBy: 'random',
-        template: '<a href="{{link}}"><img class="Insphoto" src="{{image}}" /></a>',
-        after: function() {
-            if(!this.hasNext()) {
-                loadbutton.setAttribute('disabled','disabled');
-            }
-        }
-    });
-    loadbutton.addEventListener('click',function(){
-        feed.next();
-    });
-    feed.run();
-</script>
 <div id="maincontent">
     <h1>Yuchen's Story</h1>
     <div id="instafeed"></div>
@@ -100,6 +80,26 @@
         document.getElementById('loading').style.display = "none";
         document.getElementById('maincontent').style.display = "block";
     }
+</script>
+<script>
+    var loadbutton = document.getElementById('load-more');
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'psaux0',
+        clientId:'1ed94341d26548b9b51bd42bfb0dc0e4',
+        resolution: 'low_resolution',
+        sortBy: 'random',
+        after: function() {
+            if(!this.hasNext()) {
+                loadbutton.setAttribute('disabled','disabled');
+            }
+        },
+        template: '<a href="{{link}}"><img class="Insphoto" src="{{image}}" /></a>'
+    });
+    loadbutton.addEventListener('click',function(){
+        feed.next();
+    });
+    feed.run();
 </script>
 </body>
 </html>

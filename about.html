@@ -16,6 +16,7 @@
             }
         }
     </script>
+    <script src="lib/js/cheet.min.js"></script>
     <style>
                 #loading {
                     width:200px;
@@ -55,6 +56,17 @@
                 #maincontent {
                     display: none;
                 }
+
+                #perk {
+                    z-index: 10;
+                    display: none;
+                    margin: 0 0 0 40%;
+                }
+
+                @keyframes showup {
+                    from {opacity: 0;}
+                    to {opacity: 1;}
+                }
     </style>
     <script src="lib/js/prefixfree.min.js"></script>
 </head>
@@ -86,15 +98,34 @@
             </section>
         </div>
     </div>
+    <div id="perk">
+        <iframe width="420" height="315" src="//www.youtube.com/embed/J064TI8WDKo" frameborder="0" allowfullscreen></iframe>
+    </div>
     <footer id="footer">
         © yuchensu.com. All rights reserved.
     </footer>
+
 </div>
 <script>
     function loaded() {
         document.getElementById('loading').style.display = "none";
         document.getElementById('maincontent').style.display = "block";
+        console.log("What's name of Joker's most famous female assistant?")
     }
+</script>
+<script>
+    cheet('h a r l e y space q u i n n', function () {
+        fail: function() {
+            console.log('Not right!');
+        }
+        done: function() {
+            var p = document.getElementById('perk');
+            p.style.display = 'inline';
+            p.style.animation = 'showup 2s';
+            console.log('Got it');
+            cheet.disable('h a r l e y space q u i n n');
+        }
+    });
 </script>
 </body>
 </html>

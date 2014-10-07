@@ -78,12 +78,12 @@
         clientId:'1ed94341d26548b9b51bd42bfb0dc0e4',
         resolution: 'low_resolution',
         sortBy: 'random',
-        template: '<a href="{{link}}"><img class="Insphoto" src="{{image}}" /></a>'
+        template: '<a href="{{link}}"><img class="Insphoto" src="{{image}}" /></a>',
         after: function() {
             if(!this.hasNext()) {
                 loadbutton.setAttribute('disabled','disabled');
             }
-        }
+        },
     });
     loadbutton.addEventListener('click',function(){
         feed.next();

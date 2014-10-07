@@ -28,7 +28,7 @@ h2 {
 }
 #hero {
     border-radius: 0.5em;
-    margin: 2em 0 2em 0;
+    margin: 1.5em 0 1.5em 0;
     padding: 3em 0 3em 0;
 }
 #hero h2 {
@@ -37,7 +37,7 @@ h2 {
 }
 #hero p {
     font-size: 1.25em;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.75em;
 }
 #footer {
     margin: 1.5em 0 1.5em 0;

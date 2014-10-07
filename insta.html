@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Instatest</title>
+    <script src="lib/js/instafeed.min.js"></script>
+</head>
+<body>
+<script>
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'psaux0',
+        clientId:'1ed94341d26548b9b51bd42bfb0dc0e4',
+        resolution: 'low_resolution',
+        template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+    });
+    feed.run();
+</script>
+<div id="instafeed"></div>
+</body>
+</html>

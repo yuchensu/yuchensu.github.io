@@ -32,7 +32,7 @@ section {
 #hero {
     border-radius: 0.5em;
     line-height: 2em;
-    margin: 2em 0 2em 0;
+    margin: 2em 0 0.5em 0;
     padding: 3em 2em 3em 2em;
 }
 #hero h2 {
@@ -58,6 +58,6 @@ section {
     font-size: 0.85em;
 }
 #mainpic {
-    width: 90px;
-    height:90px;
+    width: 120px;
+    height:120px;
 }

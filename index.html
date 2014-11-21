@@ -26,7 +26,7 @@
 		$(document).ready(function(){
 			var d = new Date();
 			var loginWord = "Welcome to yuchensu.com!\nCurrent time is " + d.toString() + ".\nType \'[H]elp\' for more options.\nYuchensu.com. All Rights Reserved 2014";
-			var helpOption = "[A]bout - Brief introduction about myself\n[S]tory - Stories told by pictures I took\n[B]log - My blog (in English)\n[C]ontact - My contact information\n[M]odern - Switch to a modern version of my website";
+			var helpOption = "[A]bout - Brief introduction about myself\n[S]tory - Stories told by pictures I took\n[B]log - My blog (in English)\n[C]ontact - My contact information\n[M]odern - Switch to a modern version of my website\nPlay - Play a random piece of 8-bit music\nStop - Stop playing music\nNext - Another piece";
 			var ctac = "Email: psaux0@gmail.com\nGithub: http://github.com/psaux0\nTwitter: @psaux0"
 			SC.initialize({
 				client_id: '9bec5789b3326903c9ed2d983f69b9df',
@@ -36,6 +36,7 @@
 				  var song = $.map(tracks, function(i){
 				  	return i;
 				  });
+				  var i = Math.floor(Math.random() * song.length);
 				  $('#rpr').terminal(function(command, term){
 				  	command = command.toLowerCase();
 				  	if (command == "help" || command == "h") {
@@ -54,12 +55,18 @@
 						term.echo("This will redirect the page to the original modern version in 3s ...");
 						setTimeout(function(){window.location.replace("mindex.html")},3000);
 					} else {
-						var i = Math.floor(Math.random() * song.length);
 						SC.stream(song[i].id,function(sound){
 							if(command == "play") {
 								sound.start();
 							} else if (command == "stop") {
 								sound.stop();
+								i = Math.floor(Math.random() * song.length);
+							} else if (command == "next") {
+								sound.stop();
+								if(i >= song.length - 1){ 
+									i = 0;
+								} else { i++;}
+								sound.start();
 							} else {
 								term.echo("Unknown Command!\nType [H]elp for options.")
 							}

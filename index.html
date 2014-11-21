@@ -37,8 +37,6 @@
 				  	return i;
 				  });
 				  var i = Math.floor(Math.random() * song.length);
-				  while(1){
-				  	if(i >= song.length) i = 0;
 				  	SC.stream(song[i].id,function(sound){
 				  		$('#rpr').terminal(function(command, term){
 				  			command = command.toLowerCase();
@@ -66,7 +64,6 @@
 					        }
 					    }, {prompt: '[guest@NERV ~]$ ', name: 'test', greetings: loginWord });
 					}); 
-				  i++;}
 			});
 		});
 		</script>

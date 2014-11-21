@@ -36,34 +36,36 @@
 				  var song = $.map(tracks, function(i){
 				  	return i;
 				  });
-				  var i = Math.floor(Math.random() * song.length);
-				  	SC.stream(song[i].id,function(sound){
-				  		$('#rpr').terminal(function(command, term){
-				  			command = command.toLowerCase();
-				  			if (command == "help" || command == "h") {
-				  				term.echo(helpOption);
-				  			} else if (command == "about" || command == "a"){
-				  				term.echo(intro);
-				  			} else if (command == "story" || command == "s"){
-				  				term.echo("This will redirect the page to my instagram wall in 3s ...");
-				  				setTimeout(function(){window.location.replace("insta.html")},3000);
-				  			} else if (command == "blog" || command == "b"){
-				  				term.echo("This will redirect the page to my blog in 3s ...");
-					            setTimeout(function(){window.location.replace("http://www.psaux0.com")},3000);
-					        } else if (command == "contact" || command == "c"){
-					        	term.echo(ctac);
-					        } else if (command == "modern" || command == "m"){
-					        	term.echo("This will redirect the page to the original modern version in 3s ...");
-					        	setTimeout(function(){window.location.replace("mindex.html")},3000);
-					        } else if (command == "play") {
-					        	sound.start();
-					        } else if (command == "stop") {
-					        	sound.stop();
-					        } else {
-					        	term.echo("Unknown command\nType [H]elp for more options")
-					        }
-					    }, {prompt: '[guest@NERV ~]$ ', name: 'test', greetings: loginWord });
-					}); 
+				  $('#rpr').terminal(function(command, term){
+				  	command = command.toLowerCase();
+				  	if (command == "help" || command == "h") {
+				  		term.echo(helpOption);
+				  	} else if (command == "about" || command == "a"){
+				  		term.echo(intro);
+				  	} else if (command == "story" || command == "s"){
+				  		term.echo("This will redirect the page to my instagram wall in 3s ...");
+				  		setTimeout(function(){window.location.replace("insta.html")},3000);
+				  	} else if (command == "blog" || command == "b"){
+				  		term.echo("This will redirect the page to my blog in 3s ...");
+					    setTimeout(function(){window.location.replace("http://www.psaux0.com")},3000);
+					} else if (command == "contact" || command == "c"){
+						term.echo(ctac);
+					} else if (command == "modern" || command == "m"){
+						term.echo("This will redirect the page to the original modern version in 3s ...");
+						setTimeout(function(){window.location.replace("mindex.html")},3000);
+					} else {
+						var i = Math.floor(Math.random() * song.length);
+						SC.stream(song[i].id,function(sound){
+							if(command == "play") {
+								sound.start();
+							} else if (command == "stop") {
+								sound.stop();
+							} else {
+								term.echo("Unknown Command!\nType [H]elp for options.")
+							}
+						});
+					}
+				}, {prompt: '[guest@NERV ~]$ ', name: 'test', greetings: loginWord });
 			});
 		});
 		</script>

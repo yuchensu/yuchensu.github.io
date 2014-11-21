@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="//connect.soundcloud.com/sdk.js"></script>
+        <script src="script.js">
+        SC.initialize({
+  client_id: '9bec5789b3326903c9ed2d983f69b9df'
+});
+
+$(document).ready(function() {
+SC.stream('/tracks/293', function(sound) {
+  $('#start').click(function(e) {
+    e.preventDefault();
+    sound.start();
+  });
+  $('#stop').click(function(e) {
+    e.preventDefault();
+    sound.stop();
+  });
+});
+});
+        </script>
+    </head>
+    <body>
+        <a href="#" id="start">Start</a>
+        <a href="#" id="stop">Stop</a>
+    </body>
+</html>

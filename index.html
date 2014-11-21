@@ -37,6 +37,10 @@
 				  	return i;
 				  });
 				  var i = Math.floor(Math.random() * song.length);
+				  var mySound = new SMSound();
+				  SC.stream(song[i].id,function(sound){
+				  	mySound = sound;
+				  })
 				  $('#rpr').terminal(function(command, term){
 				  	command = command.toLowerCase();
 				  	if (command == "help" || command == "h") {
@@ -54,23 +58,12 @@
 					} else if (command == "modern" || command == "m"){
 						term.echo("This will redirect the page to the original modern version in 3s ...");
 						setTimeout(function(){window.location.replace("mindex.html")},3000);
+					} else if (command == "play") {
+						mySound.play();
+					} else if (command == "stop") {
+						mySound.stop();
 					} else {
-						SC.stream(song[i].id,function(sound){
-							if(command == "play") {
-								sound.start();
-							} else if (command == "stop") {
-								sound.stop();
-								i = Math.floor(Math.random() * song.length);
-							} else if (command == "next") {
-								sound.stop();
-								if(i >= song.length - 1){ 
-									i = 0;
-								} else { i++;}
-								sound.start();
-							} else {
-								term.echo("Unknown Command!\nType [H]elp for options.")
-							}
-						});
+						term.echo("Unknown command!\nType [H]elp for more options.");
 					}
 				}, {prompt: '[guest@NERV ~]$ ', name: 'test', greetings: loginWord });
 			});

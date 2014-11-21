@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="Yuchen Su's personal website"/>
+    <meta name="keywords" content="Yuchen Su,Blog,Yuchen"/>
+    <meta name="author" content="Yuchen Su"/>
+    <title>Yuchen Su</title>
+    <script src="lib/js/prefixfree.min.js"></script>
+    <script src="lib/js/skel.min.js">
+        {
+            prefix: "lib/css/style",
+                    resetCSS: true,
+                boxModel: "border",
+                grid: { gutters: 30 },
+            breakpoints: {
+                wide: { range: "1200-", containers: 1140, grid: { gutters: 50 } },
+                narrow: { range: "481-1199", containers: 960 },
+                mobile: { range: "-480", containers: "fluid", lockViewport: true, grid: { collapse: true } }
+            }
+        }
+    </script>
+    <style>
+        #loading {
+            width:200px;
+            height:100px;
+            margin: 20% auto;
+            text-align: center;
+        }
+
+        #loading span {
+            height:80px;
+            width:15px;
+            background:#BDBDBD;
+            display:inline-block;
+            animation:loader 1s infinite;
+        }
+        #loading p {
+            color: #BDBDBD;
+            font-size: 20px;
+            font-family: Helvetica;
+            text-transform: uppercase;
+            margin-top: 5px;
+            font-weight: 300;
+            letter-spacing: .05em;
+            text-align: center;
+        }
+        @keyframes loader{
+            50% { height:30px; margin-top:50px; opacity:.5; }
+        }
+
+        #loading span:nth-child(1) {animation-delay:.1s;}
+        #loading span:nth-child(2) {animation-delay:.2s;}
+        #loading span:nth-child(3) {animation-delay:.3s;}
+        #loading span:nth-child(4) {animation-delay:.4s;}
+        #loading span:nth-child(5) {animation-delay:.5s;}
+        #loading span:nth-child(6) {animation-delay:.6s;}
+
+        #maincontent {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="loaded()">
+<div id="loading">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <p>THINKING</p>
+</div>
+<div id="maincontent">
+    <section id="hero">
+        <h1>Yuchen Su</h1>
+        <br/>
+        <a href="./about.html" class="button">About Me</a>
+        <a href="http://www.psaux0.com" class="button">Blog</a>
+        <a href="./insta.html" class="button">Story</a>
+        <a href="mailto:psaux0@gmail.com?Subject="Hello%20Yuchen" target="_top" class="button" >Contact Me</a>
+    </section>
+    <section id = "smedia">
+        <a href="https://www.facebook.com/yuchen84"><img src="res/icons/facebook-48-black.png"></a>
+        <a href="https://twitter.com/psaux0"><img src="res/icons/twitter-48-black.png"/></a>
+        <a href="https://github.com/psaux0"><img src="res/icons/github-48-black.png"/></a>
+    </section>
+    <footer id="footer">
+        © yuchensu.com. All rights reserved.
+    </footer>
+ </div>
+<script>
+    function loaded() {
+        document.getElementById('loading').style.display = "none";
+        document.getElementById('maincontent').style.display = "block";
+    }
+</script>
+</body>
+</html>

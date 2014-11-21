@@ -10,7 +10,15 @@
 });
 
 $(document).ready(function() {
-SC.stream('/tracks/293', function(sound) {
+  SC.get('/playlists/6566087/tracks/', function(tracks) {
+
+  // get an array of tracks
+  var song = $.map(tracks, function(i){
+    return i;
+  });
+
+  var i = Math.floor(Math.random() * song.length);
+SC.stream(song[i].id, function(sound) {
   $('#start').click(function(e) {
     e.preventDefault();
     sound.start();
@@ -19,6 +27,7 @@ SC.stream('/tracks/293', function(sound) {
     e.preventDefault();
     sound.stop();
   });
+});
 });
 });
         </script>

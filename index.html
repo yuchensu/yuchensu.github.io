@@ -62,8 +62,19 @@
 						mySound.play();
 					} else if (command == "stop") {
 						mySound.stop();
+					} else if (command == "next"){
+						mySound.stop();
+						if(i >= song.length - 1) {
+							i = 0;
+						} else {
+							i++;
+						}
+						SC.stream(song[i].id,function(sound){
+							mySound = sound;
+						});
+						mySound.play();
 					} else {
-						term.echo("Unknown command!\nType [H]elp for more options.");
+						term.echo("Unknown command!\nType [H]elp for options.")
 					}
 				}, {prompt: '[guest@NERV ~]$ ', name: 'test', greetings: loginWord });
 			});

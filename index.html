@@ -37,7 +37,7 @@
 				  	return i;
 				  });
 				  var i = Math.floor(Math.random() * song.length);
-				  var mySound = new SMSound();
+				  var mySound;
 				  SC.stream(song[i].id,function(sound){
 				  	mySound = sound;
 				  })

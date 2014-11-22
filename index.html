@@ -59,7 +59,7 @@
 						term.echo("This will redirect the page to the original modern version in 3s ...");
 						setTimeout(function(){window.location.replace("mindex.html")},3000);
 					} else if (command == "play") {
-						mySound.play();
+						mySound.play({onfinish: function(){term.exec("next");}});
 					} else if (command == "stop") {
 						mySound.stop();
 					} else if (command == "next"){

@@ -1,98 +1,145 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="description" content="Yuchen Su's personal website"/>
-    <meta name="keywords" content="Yuchen Su,Blog,Yuchen"/>
-    <meta name="author" content="Yuchen Su"/>
-    <title>Yuchen Su</title>
-    <script src="lib/js/prefixfree.min.js"></script>
-    <script src="lib/js/skel.min.js">
-        {
-            prefix: "lib/css/style",
-                    resetCSS: true,
-                boxModel: "border",
-                grid: { gutters: 30 },
-            breakpoints: {
-                wide: { range: "1200-", containers: 1140, grid: { gutters: 50 } },
-                narrow: { range: "481-1199", containers: 960 },
-                mobile: { range: "-480", containers: "fluid", lockViewport: true, grid: { collapse: true } }
-            }
-        }
-    </script>
-    <style>
-        #loading {
-            width:200px;
-            height:100px;
-            margin: 20% auto;
-            text-align: center;
-        }
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Yuchen Su</title>
 
-        #loading span {
-            height:80px;
-            width:15px;
-            background:#BDBDBD;
-            display:inline-block;
-            animation:loader 1s infinite;
-        }
-        #loading p {
-            color: #BDBDBD;
-            font-size: 20px;
-            font-family: Helvetica;
-            text-transform: uppercase;
-            margin-top: 5px;
-            font-weight: 300;
-            letter-spacing: .05em;
-            text-align: center;
-        }
-        @keyframes loader{
-            50% { height:30px; margin-top:50px; opacity:.5; }
-        }
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap itself -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-        #loading span:nth-child(1) {animation-delay:.1s;}
-        #loading span:nth-child(2) {animation-delay:.2s;}
-        #loading span:nth-child(3) {animation-delay:.3s;}
-        #loading span:nth-child(4) {animation-delay:.4s;}
-        #loading span:nth-child(5) {animation-delay:.5s;}
-        #loading span:nth-child(6) {animation-delay:.6s;}
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/magister.css">
 
-        #maincontent {
-            display: none;
-        }
-    </style>
+	<!-- Fonts -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
 </head>
-<body onload="loaded()">
-<div id="loading">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <p>THINKING</p>
-</div>
-<div id="maincontent">
-    <section id="hero">
-        <h1>Yuchen Su</h1>
-        <br/>
-        <a href="./about.html" class="button">About Me</a>
-        <a href="http://www.psaux0.com" class="button">Blog</a>
-        <a href="mailto:psaux0@gmail.com?Subject="Hello%20Yuchen" target="_top" class="button" >Contact Me</a>
-    </section>
-    <section id = "smedia">
-        <a href="https://www.facebook.com/yuchen84"><img src="res/icons/facebook-48-black.png"></a>
-        <a href="https://twitter.com/psaux0"><img src="res/icons/twitter-48-black.png"/></a>
-        <a href="https://github.com/psaux0"><img src="res/icons/github-48-black.png"/></a>
-    </section>
-    <footer id="footer">
-        © yuchensu.com. All rights reserved.
-    </footer>
- </div>
-<script>
-    function loaded() {
-        document.getElementById('loading').style.display = "none";
-        document.getElementById('maincontent').style.display = "block";
-    }
+
+<!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
+<body class="theme-invert">
+
+<nav class="mainmenu">
+	<div class="container">
+		<div class="dropdown">
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#head" class="active">Hello</a></li>
+				<li><a href="#about">About me</a></li>
+				<li><a href="#story">Story</a></li>
+				<li><a href="#contact">Get in touch</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<!-- Main (Home) section -->
+<section class="section" id="head">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+
+				<!-- Site Title, your name, HELLO msg, etc. -->
+				<h1 class="title">Yuchen Su</h1>
+				<h2 class="subtitle">DO SOMETHING COOL</h2>
+
+				<!-- Short introductory (optional) -->
+				<h3 class="tagline">
+					An Engineer, A Marketer, A Learner
+				</h3>
+				
+				<!-- Nice place to describe your site in a sentence or two -->
+				<p>Yuchensu.com, All Rights Reserved</p>
+	
+			</div> <!-- /col -->
+		</div> <!-- /row -->
+	
+	</div>
+</section>
+
+<!-- Second (About) section -->
+<section class="section" id="about">
+	<div class="container">
+	
+		<h2 class="text-center title">About me</h2>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-2">    
+				<h5><strong>Who am I?<br></strong></h5>
+				<p>From China, Yuchen got a Bachelor's degree in Mechanical Engineering from Shanghai Jiao Tong University. He is now pursuing a Master's degree in Marketing Communication at Emerson College Boston. Yuchen is a coding enthusiast. He regards himself as a nerd with a heart of an artist.
+                Yuchen is curious about Civic Innovation and TechArt. He hopes that one day he can make a robot on his own with both ornamental and practical function.
+                </p>    
+			</div>
+			<div class="col-sm-4">
+				<img src="assets/images/ps.png" width="160" height="160" class="img-rounded">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Third (Works) section -->
+<section class="section" id="story">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div id="instafeed"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Fourth (Contact) section -->
+<section class="section" id="contact">
+	<div class="container">
+	
+		<h2 class="text-center title">Get in touch</h2>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<p class="lead">Have a question to me?</p>
+				<p>Feel free to email me, or drop me a line in Twitter!</p>
+				<p><b>psaux0@gmail.com</b><br><br></p>
+				<ul class="list-inline list-social">
+					<li><a href="https://twitter.com/psaux0" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+					<li><a href="https://github.com/psaux0" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+					<li><a href="http://www.psaux0.com" class="btn btn-link"><i class="fa fa-pencil fa-fw"></i> Blogger</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+<!-- Load js libs only when the page is loaded. -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/instafeed.min.js"></script>
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'psaux0',
+        clientId:'1ed94341d26548b9b51bd42bfb0dc0e4',
+        resolution: 'low_resolution',
+        sortBy: 'random',
+        after: function() {
+            if(!this.hasNext()) {
+                loadbutton.setAttribute('disabled','disabled');
+            }
+        },
+        template: '<a href="{{link}}"><img class="Insphoto" src="{{image}}" /></a>'
+    });
+    feed.run();
 </script>
+<script src="assets/js/modernizr.custom.72241.js"></script>
+<!-- Custom template scripts -->
+<script src="assets/js/magister.js"></script>
 </body>
 </html>
